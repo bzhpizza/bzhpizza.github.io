@@ -16,8 +16,8 @@ save:
 	git push
 
 deploy:
-	git checkout development
-	git save
+	make checkout development
+	make save
 
 	ng build --prod --base-href "https://bzhpizza.github.io/"
 	rm -rf /tmp/braiz-pizza
