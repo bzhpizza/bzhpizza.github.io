@@ -6,16 +6,16 @@ save:
 
 deploy:
 	git checkout development
-  git save
+	git save
 
 	ng build --prod --base-href "https://bzhpizza.github.io/"
 	rm -rf /tmp/braiz-pizza
 	mv dist/braiz-pizza /tmp
 
-  git checkout master
+	git checkout master
 
 test:
-  git checkout master
-  git branch
-  git checkout development
-  git branch
+	git checkout master
+	git branch
+	git checkout development
+	git branch
