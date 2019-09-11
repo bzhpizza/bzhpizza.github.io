@@ -1,0 +1,5 @@
+<h1>Pizzas</h1>
+<article *ngFor="let category of categories">
+  <h2>{{category}}</h2>
+  <pizza *ngFor="let pizza of pizzas[category]" [data]="pizza"></pizza>
+</article>
