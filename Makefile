@@ -1,3 +1,14 @@
+clean:
+	@for file in `ls`; do if [ "$$file" != "Makefile" ]; then git rm -r $$file; fi; done
+
+deploy-master:
+	git checkout master
+	make clean
+	mv /tmp/braiz-pizza/* .
+	git add .
+	git commit -m "rebuild frontend app"
+	git push
+
 save:
 	git checkout development
 	git add .
@@ -12,4 +23,4 @@ deploy:
 	rm -rf /tmp/braiz-pizza
 	mv dist/braiz-pizza /tmp
 
-	git checkout master
+	make deploy-master
