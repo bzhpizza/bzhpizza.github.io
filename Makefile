@@ -13,9 +13,3 @@ deploy:
 	mv dist/braiz-pizza /tmp
 
 	git checkout master
-
-test:
-	git checkout master
-	git branch
-	git checkout development
-	git branch
