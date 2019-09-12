@@ -1,8 +1,8 @@
 clean:
-	@for file in `ls`; do if [ "$$file" != "Makefile" ]; then git rm -r $$file; fi; done
+	git checkout master
+	@for file in `git ls-files`; do if [ "$$file" != "Makefile" && "$$file" != "node_modules" ]; then git rm -r $$file; fi; done
 
 deploy-master:
-	git checkout master
 	make clean
 	mv /tmp/braiz-pizza/* .
 	git add .
@@ -10,7 +10,6 @@ deploy-master:
 	git push
 
 save:
-	git checkout development
 	git add .
 	@read -p "info: " -r message && git commit -m "$$message"
 	git push
