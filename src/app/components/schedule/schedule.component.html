@@ -1,0 +1,15 @@
+<table class="table table-striped">
+  <tr>
+    <th>Jour(s)</th>
+    <th>Horaires</th>
+  </tr>
+  <tr *ngFor="let schedule of schedules" [ngClass]="{active: schedule.day == today}">
+    <td>{{schedule.label}}</td>
+    <td *ngIf="schedule.hours.length > 0">
+      <span *ngFor="let hour of schedule.hours">{{hour}}</span>
+    </td>
+    <td *ngIf="schedule.hours.length == 0">
+      <span>Fermé</span>
+    </td>
+  </tr>
+</table>

@@ -1,3 +1,24 @@
-<p>
-  {{data|json}}
-</p>
+<div class="card" style="width: 18rem;" *ngIf="display=='cards'">
+  <div class="card-header">
+    <h4>{{data.nom}}</h4>
+    <span class="badge badge-secondary">{{data.prix | number : '1.2-2'}}€</span>
+  </div>
+
+  <img *ngIf="data.image" [src]="data.image" class="card-img-top" alt="photo {{data.nom}}">
+  <div class="card-body">
+    <span class="badge" *ngFor="let ingredient of data.ingredients">{{ingredient}}</span>
+    <p></p>
+  </div>
+</div>
+
+<div class="row" *ngIf="display=='list'">
+  <div class="col-md-3">
+    {{data.nom}}
+  </div>
+  <div class="col-md-6">
+    <span class="badge" *ngFor="let ingredient of data.ingredients">{{ingredient}}</span>
+  </div>
+  <div class="col-md-3">
+    <span class="badge badge-secondary" style="height: 20px">{{data.prix | number : '1.2-2'}}€</span>
+  </div>
+</div>

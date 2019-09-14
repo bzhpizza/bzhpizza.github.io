@@ -1,7 +1,10 @@
-clean:
+help:             ## display this help
+	@python -c "lines = filter(lambda l: not l.startswith('\t') and l, open('Makefile').read().split('\n')); print('\n'.join(lines))"
+
+clean:            ## remove old build files for replacement
 	@for file in `ls`; do if [ "$$file" != "Makefile" ]; then git rm -r $$file; fi; done
 
-deploy-master:
+deploy-master:    ## deploy local master branch to remote master branch
 	git checkout master
 	make clean
 	mv /tmp/braiz-pizza/* .
@@ -9,13 +12,13 @@ deploy-master:
 	git commit -m "rebuild frontend app"
 	git push
 
-save:
+save:             ## save development work on remote branch
 	git checkout development
 	git add .
 	@read -p "info: " -r message && git commit -m "$$message"
 	git push
 
-deploy:
+deploy:           ## build project and push result to master branch
 	git checkout development
 
 	ng build --prod --base-href "https://bzhpizza.github.io/"
