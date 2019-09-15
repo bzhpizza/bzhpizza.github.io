@@ -1,4 +1,4 @@
-<div class="card" style="width: 18rem;" *ngIf="display=='cards'">
+<div class="pizza card" *ngIf="display=='cards'" (click)="addToCart()">
   <div class="card-header">
     <h4>{{data.nom}}</h4>
     <span class="badge badge-secondary">{{data.prix | number : '1.2-2'}}€</span>
@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div class="row" *ngIf="display=='list'">
+<div class="row pizza" *ngIf="display=='list'" (click)="addToCart()">
   <div class="col-md-3">
     {{data.nom}}
   </div>

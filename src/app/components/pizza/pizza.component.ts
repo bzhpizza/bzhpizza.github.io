@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { CartService } from "../../service/cart.service";
 
 @Component({
   selector: "pizza",
@@ -9,7 +10,11 @@ export class PizzaComponent implements OnInit {
   @Input() data: any;
   @Input() display: String;
 
-  constructor() {}
+  constructor(private cart: CartService) {}
 
   ngOnInit() {}
+
+  addToCart() {
+    this.cart.add(this.data);
+  }
 }

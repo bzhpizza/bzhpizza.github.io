@@ -1,17 +1,21 @@
-<main class="container">
-  <h1>Pizzas</h1>
+<div class="container">
+  <header style="display: flex">
+    <h1>Pizzas</h1>
 
-  <button [disabled]="display=='cards'" (click)="setDisplay('cards')">
-    cards
-  </button>
-  <button [disabled]="display=='list'" (click)="setDisplay('list')">
-    list
-  </button>
+    <div class="btn-group ml-auto" style="height: 35px; margin: 7.5px">
+      <button class="btn btn-secondary" [disabled]="display=='cards'" (click)="setDisplay('cards')">
+        <i class="fa fa-th-large"></i>
+      </button>
+      <button class="btn btn-secondary" [disabled]="display=='list'" (click)="setDisplay('list')">
+        <i class="fa fa-list"></i>
+      </button>
+    </div>
+  </header>
 
   <article *ngFor="let category of categories">
     <h2>{{category}}</h2>
     <div [ngClass]="{row: display=='cards'}">
-    <pizza class="col-md-3" *ngFor="let pizza of pizzas[category]" [data]="pizza" [display]="display"></pizza>
+    <pizza class="col-md-3 col-sm-6 col-xs-6" *ngFor="let pizza of pizzas[category]" [data]="pizza" [display]="display"></pizza>
     </div>
   </article>
-</main>
+</div>

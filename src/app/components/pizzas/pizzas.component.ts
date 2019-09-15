@@ -10,7 +10,7 @@ export class PizzasComponent implements OnInit {
   public categories = [];
   public pizzas = {};
   // can be card or list
-  public display: String = "cards";
+  public display: String = "list";
 
   constructor(public pizza_service: PizzasService) {}
 
