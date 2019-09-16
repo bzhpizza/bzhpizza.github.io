@@ -1,4 +1,16 @@
+<!-- navbar -->
 <app-navigation></app-navigation>
 
+<!-- popup permettant d'afficher une simple info -->
+<app-confirmation-popup
+  [title]="popup.title"
+  [question]="popup.message"
+  [dismiss]="popup.dismiss"
+  [(choice)]="popup.choice">
+</app-confirmation-popup>
+
+<!-- popup pour résumer la commande -->
 <app-cart-popup></app-cart-popup>
+
+<!-- contenu injecté par le routeur -->
 <router-outlet></router-outlet>

@@ -1,0 +1,18 @@
+<!-- Modal -->
+<div class="modal fade" id="confirmation-popup" tabindex="-1" role="dialog" aria-labelledby="confirmation-popup" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" [innerHTML]="title | trust"></div>
+      <div class="modal-body">
+        <label>
+          <input type="checkbox" name="confirm" [checked]="popup.choice"
+            (change)="popup.choice = !popup.choice">
+          {{question}}
+        </label>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" (click)="popup.submit()" [innerHTML]="dismiss | trust"></button>
+      </div>
+    </div>
+  </div>
+</div>

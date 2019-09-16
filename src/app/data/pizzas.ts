@@ -79,7 +79,8 @@ export const PIZZAS = {
     {
       nom: "Basquaise",
       ingredients: ["Poulet", "oignon", "poivrons", "mozzarella"],
-      prix: 9.9
+      prix: 9.9,
+      image: "assets/pizzas/basquaise.jpg"
     },
     {
       nom: "Poulet",
@@ -142,7 +143,8 @@ export const PIZZAS = {
         "origan",
         "mozarella"
       ],
-      prix: 9.9
+      prix: 9.9,
+      image: "assets/pizzas/dijonnaise.jpg"
     },
     {
       nom: "Braiz'Pizza",

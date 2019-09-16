@@ -1,4 +1,6 @@
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
+import { StorageService } from "./storage.service";
+import { PopupService } from "./popup.service";
 
 @Injectable({
   providedIn: "root"
@@ -10,9 +12,29 @@ export class CartService {
     pizzas: {}
   };
 
-  constructor() {}
+  constructor(private storage: StorageService, private popup: PopupService) {
+    this.popup.onSubmit(this.popupPreferenceSetter());
+  }
+
+  popupPreferenceSetter() {
+    return (hide: boolean) => {
+      console.log("set popup preference");
+      console.log(hide);
+      this.storage.set("show_popup", !hide);
+    };
+  }
 
   add(pizza) {
+    console.log("add show preference");
+    console.log(this.showPopup());
+    if (this.showPopup() === true) {
+      this.popup.confirmation(
+        'La pizza a été ajoutée à la commande <i class="fa fa-shopping-cart"></i>',
+        "Ne plus afficher ce message",
+        "ok"
+      );
+    }
+
     this.summary.count += 1;
     this.summary.price += pizza.prix;
 
@@ -30,5 +52,12 @@ export class CartService {
       count: 0,
       pizzas: {}
     };
+  }
+
+  showPopup() {
+    if (this.storage.get("show_popup") === undefined) {
+      this.storage.set("show_popup", true);
+    }
+    return this.storage.get("show_popup");
   }
 }
