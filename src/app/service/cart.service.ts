@@ -55,7 +55,7 @@ export class CartService {
   }
 
   showPopup() {
-    if (this.storage.get("show_popup") === undefined) {
+    if (this.storage.get("show_popup") === null) {
       this.storage.set("show_popup", true);
     }
     return this.storage.get("show_popup");

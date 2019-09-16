@@ -8,7 +8,7 @@ export class PopupService {
   public title: string = "";
   public message: string = "";
   public dismiss: string = "";
-  public choice: boolean = true;
+  public choice: boolean = false;
   public submitCallback: (choice: boolean) => any;
 
   constructor() {}
