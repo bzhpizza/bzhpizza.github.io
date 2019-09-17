@@ -111,24 +111,12 @@ export const PIZZAS = {
     },
     {
       nom: "3 Fromages",
-      ingredients: [
-        "Chèvre",
-        "bleu",
-        "brie",
-        "raclette",
-        "ou parmesan ...au choix"
-      ],
+      ingredients: ["Chèvre", "bleu", "brie", "raclette", "parmesan au choix"],
       prix: 8.5
     },
     {
       nom: "4 Fromages",
-      ingredients: [
-        "Chèvre",
-        "bleu",
-        "brie",
-        "raclette",
-        "ou parmesan ...au choix"
-      ],
+      ingredients: ["Chèvre", "bleu", "brie", "raclette", "parmesan au choix"],
       prix: 9.5
     }
   ],
