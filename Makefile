@@ -1,7 +1,8 @@
 clean:
 	git checkout master
 	@for file in `git ls-files`; do if [ "$$file" != "Makefile" && "$$file" != "node_modules" ]; then git rm -r $$file; fi; done
-
+	rm -rf ./assets
+	
 deploy-master:
 	make clean
 	mv /tmp/braiz-pizza/* .
