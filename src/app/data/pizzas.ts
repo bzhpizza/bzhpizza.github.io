@@ -28,7 +28,8 @@ export const PIZZAS = {
     {
       nom: "Lannionaise",
       ingredients: ["Poivron", "oignon", "thon", "chèvre", "mozzarella"],
-      prix: 9.9
+      prix: 9.9,
+      image: "assets/pizzas/lannionaise.jpg"
     },
     {
       nom: "Bolognaise",
@@ -64,7 +65,8 @@ export const PIZZAS = {
     {
       nom: "Bretonne",
       ingredients: ["Pomme de terre", "champignon", "andouille", "mozzarella"],
-      prix: 9.9
+      prix: 9.9,
+      image: "assets/pizzas/bretonne.jpg"
     },
     {
       nom: "Sardinette",
@@ -97,7 +99,8 @@ export const PIZZAS = {
         "oeuf",
         "mozzarella"
       ],
-      prix: 9.9
+      prix: 9.9,
+      image: "assets/pizzas/orientale.jpg"
     },
     {
       nom: "Mexicaine",
@@ -107,7 +110,8 @@ export const PIZZAS = {
         "viande hachée",
         "mozzarella"
       ],
-      prix: 9.9
+      prix: 9.9,
+      image: "assets/pizzas/mexicaine.jpg"
     },
     {
       nom: "3 Fromages",
@@ -163,7 +167,8 @@ export const PIZZAS = {
     {
       nom: "Miel'Pizza",
       ingredients: ["Chèvre", "miel", "jambon ou poulet", "mozzarella"],
-      prix: 9.9
+      prix: 9.9,
+      image: "assets/pizzas/miel.jpg"
     },
     {
       nom: "Braiz'Fines Herbes",
